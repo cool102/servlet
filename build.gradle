@@ -28,6 +28,7 @@ test {
 
 testlogger {
   showStandardStreams = true
+
 }
 
 tasks.withType(JavaCompile) {
