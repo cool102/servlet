@@ -37,7 +37,7 @@ tasks.withType(JavaCompile) {
 jar {
   manifest {
     attributes (
-            'Main-Class':'exercise.App.java'
+            'Main-Class':'exercise.App'
     )
   }
   //from {(configurations.runtime).collect {it.isDirectory() ? it : zipTree(it)}}
