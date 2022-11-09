@@ -12,7 +12,7 @@ public class App {
     private static int getPort() {
         String port = System.getenv("PORT");
         if (port != null) {
-            return Integer.valueOf(port);
+            return Integer.parseInt(port);
         }
         return 8091;
     }
