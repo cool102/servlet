@@ -23,12 +23,17 @@ public class App {
         app.setBaseDir(System.getProperty("java.io.tmpdir"));
         app.setPort(port);
 
-        Context ctx = app.addContext("", new File(".").getAbsolutePath());
+        //Context ctx = app.addContext("", new File(".").getAbsolutePath());
 
-        // BEGIN
-        app.addServlet(ctx, "WelcomeServlet", new WelcomeServlet());
-        ctx.addServletMappingDecoded("/", "WelcomeServlet");
-        // END
+        Context ctx = app.addWebapp("", new File("src/main/webapp").getAbsolutePath());
+
+        app.addServlet(ctx, WelcomeServlet.class.getSimpleName(), new WelcomeServlet());
+        ctx.addServletMappingDecoded("", WelcomeServlet.class.getSimpleName());
+
+        //// BEGIN
+        //app.addServlet(ctx, "WelcomeServlet", new WelcomeServlet());
+        //ctx.addServletMappingDecoded("/", "WelcomeServlet");
+        //// END
 
         return app;
     }
